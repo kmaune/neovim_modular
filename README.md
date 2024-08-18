@@ -69,7 +69,7 @@ fork to your machine using one of the commands below, depending on your OS.
 <details><summary> Linux and Mac </summary>
 
 ```sh
-git clone https://github.com/dam9000/kickstart-modular.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+git clone ssh://github.com/kmaune/neovim_modular.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 ```
 
 </details>
@@ -79,13 +79,13 @@ git clone https://github.com/dam9000/kickstart-modular.nvim.git "${XDG_CONFIG_HO
 If you're using `cmd.exe`:
 
 ```
-git clone https://github.com/dam9000/kickstart.nvim.git %localappdata%\nvim\
+git clone ssh://github.com/kmaune/neovim_modular.git %localappdata%\nvim\
 ```
 
 If you're using `powershell.exe`
 
 ```
-git clone https://github.com/dam9000/kickstart.nvim.git $env:LOCALAPPDATA\nvim\
+git clone ssh://github.com/kmaune/neovim_modular.git $env:LOCALAPPDATA\nvim\
 ```
 
 </details>
