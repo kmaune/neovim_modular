@@ -31,6 +31,18 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+
+
+-- My keymappings
+
+-- Marks
+-- Disable jumping to marks, Map backtick and single quote do nothing
+vim.keymap.set('n', '`', '<Esc>', { noremap = true, silent = true, desc = 'No-op the backtick key, ***Not sure why the NOP not working' })
+vim.keymap.set('n', "'", '<NOP>', { noremap = true, silent = true, desc = 'No-op the single quote key' })
+-- Optional: Disable setting marks as well
+vim.keymap.set('n', 'm', '<NOP>', { noremap = true, silent = true, desc = 'No-op the mark setting key' })
+
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
