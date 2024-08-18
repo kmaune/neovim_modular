@@ -31,8 +31,6 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
-
-
 -- My keymappings
 
 -- Marks
@@ -42,6 +40,10 @@ vim.keymap.set('n', "'", '<NOP>', { noremap = true, silent = true, desc = 'No-op
 -- Optional: Disable setting marks as well
 vim.keymap.set('n', 'm', '<NOP>', { noremap = true, silent = true, desc = 'No-op the mark setting key' })
 
+-- some stuff I had in vim
+
+vim.keymap.set('n', 'bk', '<C-O>', { noremap = true, silent = true, desc = 'jumplist go back' })
+vim.keymap.set('n', 'fwd', '<C-I>', { noremap = true, silent = true, desc = 'jumplist go forward' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`

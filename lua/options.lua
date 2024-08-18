@@ -63,4 +63,31 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+--- Most of my stuff added below
+local set_cpp_indent = require 'kmaune/cpp_indent'
+local set_python_indent = require 'kmaune/py_indent'
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'cpp',
+  callback = function()
+    set_cpp_indent()
+  end,
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'python',
+  callback = function()
+    set_python_indent()
+  end,
+})
+
+-- default indent stuff
+vim.opt.smartindent = true
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4 --tab width is 4 spaces
+vim.opt.shiftwidth = 4 --indent also with 4 spaces
+
+vim.opt.viminfo = "'100,<1000,s100,h"
+
 -- vim: ts=2 sts=2 sw=2 et
