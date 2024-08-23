@@ -23,8 +23,8 @@ return {
       --
       -- Can use any of the colorschems loaded before this line
       --vim.cmd.colorscheme 'tokyonight-night'
-      --vim.cmd.colorscheme 'nightcity-kabuki'
-      vim.cmd.colorscheme 'jellybeans-nvim'
+      vim.cmd.colorscheme 'nightcity-kabuki'
+      --vim.cmd.colorscheme 'jellybeans-nvim'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
