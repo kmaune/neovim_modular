@@ -113,6 +113,8 @@ return {
           --    See `:help CursorHold` for information about when this is executed
           --
           -- When you move your cursor, the highlights will be cleared (the second autocommand).
+          --[[
+          -- NOTE: Turned off since not compatible with Copilot
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
             local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
@@ -136,7 +138,7 @@ return {
               end,
             })
           end
-
+          --]]
           -- The following code creates a keymap to toggle inlay hints in your
           -- code, if the language server you are using supports them
           --
@@ -166,7 +168,7 @@ return {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
+        clangd = { cmd = {"clangd", "--offset-encoding=utf-16"}, },
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
@@ -222,6 +224,10 @@ return {
             require('lspconfig')[server_name].setup(server)
           end,
         },
+      }
+    
+      require('lspconfig').pyright.setup{
+        cmd = {"/nix/linux-tools/23.11/default/bin/pyright"}
       }
     end,
   },

@@ -1,6 +1,7 @@
 return {
   { 'catppuccin/nvim', name = 'catppuccin', priority = 1000 },
   { 'cryptomilk/nightcity.nvim', name = 'nightcity', priority = 1000 },
+  {'morhetz/gruvbox', name='gruvbox', priority=1000 },
 
   {
     'rktjmp/lush.nvim', -- Lush is a requirement for Jellybeans
@@ -33,3 +34,4 @@ return {
 }
 
 -- vim: ts=2 sts=2 sw=2 et
+
