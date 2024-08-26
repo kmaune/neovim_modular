@@ -88,6 +88,7 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4 --tab width is 4 spaces
 vim.opt.shiftwidth = 4 --indent also with 4 spaces
 
+-- history stuff
 vim.opt.viminfo = "'100,<1000,s100,h"
 
 -- vim: ts=2 sts=2 sw=2 et

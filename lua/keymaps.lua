@@ -44,6 +44,19 @@ vim.keymap.set('n', 'm', '<NOP>', { noremap = true, silent = true, desc = 'No-op
 
 vim.keymap.set('n', 'bk', '<C-O>', { noremap = true, silent = true, desc = 'jumplist go back' })
 vim.keymap.set('n', 'fwd', '<C-I>', { noremap = true, silent = true, desc = 'jumplist go forward' })
+-- Open terminal window at bottom of screen with 15 rows
+-- nnoremap bt :bo term ++rows=15<CR> 
+vim.keymap.set('n', 'bt', ':bo term ++rows=15<CR>', { noremap = true, silent = true, desc = 'open terminal at bottom of screen'})
+-- Open vertical terminal to the left (can't see option to make to the right)
+-- nnoremap vt :vert term <CR> 
+vim.keymap.set('n', 'vt', ':set nosplitright<CR>:vert term<CR>:set splitright<CR>', { noremap = true, silent=true, desc='open vertical terminal'})
+-- double esc to set vim terminal to pause vim terminal (this one is already handled above)
+-- tnoremap <Esc><Esc> <C-\><C-n>
+
+-- switch between header/source with F4
+vim.keymap.set('n', '<F4>', ':ClangdSwitchSourceHeader<CR>', { noremap = true, silent = true, desc='switch between source and header file'})
+
+-- END some stuff I had in vim
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
