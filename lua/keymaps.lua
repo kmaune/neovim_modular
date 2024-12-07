@@ -46,10 +46,13 @@ vim.keymap.set('n', 'bk', '<C-O>', { noremap = true, silent = true, desc = 'jump
 vim.keymap.set('n', 'fwd', '<C-I>', { noremap = true, silent = true, desc = 'jumplist go forward' })
 -- Open terminal window at bottom of screen with 15 rows
 -- nnoremap bt :bo term ++rows=15<CR> 
-vim.keymap.set('n', 'bt', ':bo term ++rows=15<CR>', { noremap = true, silent = true, desc = 'open terminal at bottom of screen'})
+--vim.keymap.set('n', 'bt', ':belowright term +15<CR>', { noremap = true, silent = true, desc = 'open terminal at bottom of screen'})
+--vim.keymap.set('n', 'bt', ':botright term<CR>:resize 15<CR>', { noremap = true, silent = true, desc = 'open terminal at bottom of screen'})
+vim.keymap.set('n', 'bt', ':15sp | term<CR>', { noremap = true, silent = true, desc = 'open terminal at bottom of screen'})
+
 -- Open vertical terminal to the left (can't see option to make to the right)
 -- nnoremap vt :vert term <CR> 
-vim.keymap.set('n', 'vt', ':set nosplitright<CR>:vert term<CR>:set splitright<CR>', { noremap = true, silent=true, desc='open vertical terminal'})
+vim.keymap.set('n', 'vt', ':set nosplitright<CR>:vsp', { noremap = true, silent=true, desc='open vertical terminal'})
 -- double esc to set vim terminal to pause vim terminal (this one is already handled above)
 -- tnoremap <Esc><Esc> <C-\><C-n>
 
@@ -71,5 +74,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
+
+-- Copilot settings
+vim.g.copilot_no_tab_map = true
 
 -- vim: ts=2 sts=2 sw=2 et

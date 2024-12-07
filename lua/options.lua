@@ -67,6 +67,13 @@ vim.opt.scrolloff = 10
 local set_cpp_indent = require 'kmaune/cpp_indent'
 local set_python_indent = require 'kmaune/py_indent'
 
+-- default indent stuff
+vim.opt.smartindent = true
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4 --tab width is 4 spaces
+vim.opt.shiftwidth = 4 --indent also with 4 spaces
+
 vim.api.nvim_create_autocmd('FileType', {
   pattern = 'cpp',
   callback = function()
@@ -75,20 +82,16 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = 'python',
+  pattern = 'py',
   callback = function()
     set_python_indent()
   end,
 })
 
--- default indent stuff
-vim.opt.smartindent = true
-vim.opt.expandtab = true
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4 --tab width is 4 spaces
-vim.opt.shiftwidth = 4 --indent also with 4 spaces
-
 -- history stuff
 vim.opt.viminfo = "'100,<1000,s100,h"
+
+-- disable lsp diagnostic errors and warnings
+vim.diagnostic.disable()
 
 -- vim: ts=2 sts=2 sw=2 et

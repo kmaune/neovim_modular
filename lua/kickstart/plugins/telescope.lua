@@ -61,6 +61,15 @@ return {
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
         -- },
+        
+        defaults = {
+            -- all added to try to get fenerated files in <leader>sf results
+            find_files = {
+                follow = true,
+                no_ignore = true,
+                no_ignore_parent = true,
+            },
+        },
         -- pickers = {}
         extensions = {
           ['ui-select'] = {
