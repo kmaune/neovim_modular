@@ -6,7 +6,7 @@ return {
     opts = {
       -- add any opts here
       -- for example
-      -- provider = "ollama",
+      provider = 'ollama',
       ollama = {
         model = 'llama3.2:1b',
       },
