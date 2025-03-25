@@ -5,4 +5,7 @@ return {
     name = 'coq_nvim',
     priority = 1000,
   },
+
+  --import AI plugins like avant, and codeium
+  { import = 'kmaune.plugins.ai_tools' },
 }
