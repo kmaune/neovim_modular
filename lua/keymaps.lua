@@ -46,7 +46,7 @@ vim.keymap.set('n', 'bk', '<C-O>', { noremap = true, silent = true, desc = 'jump
 vim.keymap.set('n', 'fwd', '<C-I>', { noremap = true, silent = true, desc = 'jumplist go forward' })
 -- Open terminal window at bottom of screen with 15 rows
 -- nnoremap bt :bo term ++rows=15<CR> 
-vim.keymap.set('n', 'bt', ':bo term ++rows=15<CR>', { noremap = true, silent = true, desc = 'open terminal at bottom of screen'})
+vim.keymap.set('n', 'bt', ':bo term<CR>:resize 15<CR>', { noremap = true, silent = true, desc = 'open terminal at bottom of screen'})
 -- Open vertical terminal to the left (can't see option to make to the right)
 -- nnoremap vt :vert term <CR> 
 vim.keymap.set('n', 'vt', ':set nosplitright<CR>:vert term<CR>:set splitright<CR>', { noremap = true, silent=true, desc='open vertical terminal'})
