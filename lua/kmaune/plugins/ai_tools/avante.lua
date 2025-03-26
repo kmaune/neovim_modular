@@ -52,5 +52,19 @@ return {
         ft = { 'markdown', 'Avante' },
       },
     },
+
+    init = function()
+      -- Command to switch to 7B model
+      vim.api.nvim_create_user_command('AvanteSetModel7b', function()
+        require('avante.config').ollama.model = 'qwen2.5-coder:7b'
+        print '󱚶 Switched to Qwen2.5 7B model'
+      end, { desc = 'Switch Avante.nvim to Qwen2.5 7B model' })
+
+      -- Command to switch to 14B model
+      vim.api.nvim_create_user_command('AvanteSetModel14b', function()
+        require('avante.config').ollama.model = 'qwen2.5-coder:14b'
+        print '󱚷 Switched to Qwen2.5 14B model'
+      end, { desc = 'Switch Avante.nvim to Qwen2.5 14B model' })
+    end,
   },
 }
