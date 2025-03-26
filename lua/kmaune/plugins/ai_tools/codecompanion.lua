@@ -8,11 +8,34 @@ return {
     },
     opts = {
       adapters = {
-        ollama = function()
+        qwen_coder = function()
           return require('codecompanion.adapters').extend('ollama', {
+            name = 'qwen_coder',
             schema = {
+              model = {
+                default = "qwen2.5-coder:14b"
+              },
               num_ctx = {
                 default = 20000,
+              },
+              num_predict = {
+                default = -1,
+              },
+            },
+          })
+        end,
+        qwen_coder_small = function()
+          return require('codecompanion.adapters').extend('ollama', {
+            name = 'qwen_coder',
+            schema = {
+              model = {
+                default = "qwen2.5-coder:7b"
+              },
+              num_ctx = {
+                default = 20000,
+              },
+              num_predict = {
+                default = -1,
               },
             },
           })
@@ -20,9 +43,9 @@ return {
       },
       strategies = {
         chat = {
-          adapter = 'ollama',
+          adapter = 'qwen_coder',
         },
-        inline = { adapter = 'ollama' },
+        inline = { adapter = 'qwen_coder' },
       },
       opts = {
         log_level = 'DEBUG',
