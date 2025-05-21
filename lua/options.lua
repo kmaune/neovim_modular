@@ -89,8 +89,11 @@ vim.opt.shiftwidth = 4 --indent also with 4 spaces
 
 -- history stuff
 vim.opt.viminfo = "'100,<1000,s100,h"
--- END my stuff section
 
+-- setup termdebug
+vim.cmd 'packadd termdebug'
+
+-- END my stuff section
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
