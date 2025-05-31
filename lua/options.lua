@@ -93,6 +93,16 @@ vim.opt.viminfo = "'100,<1000,s100,h"
 -- setup termdebug
 vim.cmd 'packadd termdebug'
 
+-- Disable line numbers in terminal buffers
+vim.api.nvim_create_autocmd('TermOpen', {
+  desc = 'Disable line numbers in terminal',
+  group = vim.api.nvim_create_augroup('terminal-settings', { clear = true }),
+  callback = function()
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
+  end,
+})
+
 -- END my stuff section
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
