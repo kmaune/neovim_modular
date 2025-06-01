@@ -92,6 +92,7 @@ vim.opt.viminfo = "'100,<1000,s100,h"
 
 -- setup termdebug
 vim.cmd 'packadd termdebug'
+vim.g.termdebug_wide = 1
 
 -- Disable line numbers in terminal buffers
 vim.api.nvim_create_autocmd('TermOpen', {
