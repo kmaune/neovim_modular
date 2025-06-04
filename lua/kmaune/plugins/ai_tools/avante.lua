@@ -7,8 +7,10 @@ return {
       -- add any opts here
       -- for example
       provider = 'ollama',
-      ollama = {
-        model = 'qwen2.5-coder:14b',
+      providers = {
+        ollama = {
+          model = 'qwen2.5-coder:14b',
+        },
       },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
