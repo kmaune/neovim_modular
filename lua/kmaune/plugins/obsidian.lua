@@ -1,5 +1,5 @@
 return {
-  'epwalsh/obsidian.nvim',
+  'obsidian-nvim/obsidian.nvim',
   version = '*',
   lazy = true,
   ft = 'markdown',
@@ -12,6 +12,13 @@ return {
         name = 'personal',
         path = '~/Documents/ObsidianVault-Main',
       },
+    },
+
+    -- Enable completions
+    completion = {
+      --nvim_cmp = true,
+      blink = true,
+      min_chars = 2,
     },
 
     -- Default keymaps (explicitly defined)
