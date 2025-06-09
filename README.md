@@ -1,5 +1,68 @@
 # kickstart-modular.nvim
 
+## Usage Options
+
+This Neovim configuration can be used in two ways:
+
+### Option 1: As Part of Dotfiles (Recommended)
+
+This repository is included as a git submodule in my [dotfiles repo](https://github.com/kmaune/dotfiles). 
+
+To use with dotfiles:
+```bash
+git clone --recurse-submodules https://github.com/kmaune/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+./safe_install.sh
+```
+
+The dotfiles setup automatically:
+- Links the Neovim configuration to `~/.config/nvim`
+- Manages updates through the dotfiles workflow
+- Handles all dependencies and setup
+
+### Option 2: Standalone Installation
+
+For standalone use, follow the installation instructions below.
+
+## Maintaining Fork and Upstream
+
+This is a personal fork of [dam9000/kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim). To stay current with upstream improvements:
+
+### Setting Up Upstream Tracking
+
+```bash
+cd ~/.config/nvim  # or ~/dotfiles/nvim if using dotfiles
+git remote add upstream https://github.com/dam9000/kickstart-modular.nvim.git
+git fetch upstream
+```
+
+### Pulling Upstream Changes
+
+```bash
+# Fetch latest upstream changes
+git fetch upstream
+
+# Merge upstream changes (preserves your commits)
+git merge upstream/main
+git push origin main
+
+# Alternative: Rebase for cleaner history
+git rebase upstream/main
+git push --force-with-lease origin main
+```
+
+### When Using with Dotfiles
+
+After pulling upstream changes, update the dotfiles submodule reference:
+```bash
+cd ~/dotfiles
+git add nvim
+git commit -m "Update neovim config with upstream changes"
+git push
+```
+
+---
+
 ## Introduction
 
 *This is a fork of [nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) that moves from a single file to a multi file configuration.*
@@ -242,4 +305,3 @@ sudo dnf install -y gcc make git ripgrep fd-find unzip neovim
 sudo pacman -S --noconfirm --needed gcc make git ripgrep fd unzip neovim
 ```
 </details>
-
