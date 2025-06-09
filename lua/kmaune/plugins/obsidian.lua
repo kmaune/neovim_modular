@@ -14,6 +14,11 @@ return {
       },
     },
 
+    daily_notes = {
+      folder = '00 - Daily/Daily Notes',
+      date_format = '%Y-%m-%d',
+    },
+
     -- Enable completions
     completion = {
       --nvim_cmp = true,
