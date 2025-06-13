@@ -104,9 +104,6 @@ vim.api.nvim_create_autocmd('TermOpen', {
   end,
 })
 
--- for obsidian.nvim
-vim.opt.conceallevel = 2
-
 -- END my stuff section
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
