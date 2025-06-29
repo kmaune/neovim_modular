@@ -76,6 +76,11 @@ vim.keymap.set('n', '<F4>', ':ClangdSwitchSourceHeader<CR>', { noremap = true, s
 -- gdb to run termdebugger
 vim.keymap.set('n', 'gdb', ':TermdebugCommand<Space>', { noremap = true, silent = true, desc = 'run gdb with termdebugger' })
 -- END: some stuff I had in vim
+
+-- Don't lose selection when indenting
+vim.keymap.set('v', '>', '>gv', { noremap = true, silent = true, desc = 'Indent and keep selection' })
+vim.keymap.set('v', '<', '<gv', { noremap = true, silent = true, desc = 'Outdent and keep selection' })
+
 -- END: My Keymaps
 
 -- vim: ts=2 sts=2 sw=2 et
