@@ -17,10 +17,27 @@ vim.opt.showmode = false
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
+-- Enable clipboard syncing when connected via SSH (Remote -> Local Mac).
+-- OSC 52 Clipboard Provider: Bypasses the remote server's pbcopy to sync
+-- with the local system clipboard over SSH and through Tmux layers.
 vim.schedule(function()
-  vim.opt.clipboard = 'unnamedplus'
+  -- If we are in an SSH session, use OSC 52 to "tunnel" the clipboard
+  if vim.env.SSH_TTY then
+    vim.g.clipboard = {
+      name = 'OSC 52',
+      copy = {
+        ['+'] = require('vim.ui.clipboard.osc52').copy '+',
+        ['*'] = require('vim.ui.clipboard.osc52').copy '*',
+      },
+      paste = {
+        ['+'] = require('vim.ui.clipboard.osc52').paste '+',
+        ['*'] = require('vim.ui.clipboard.osc52').paste '*',
+      },
+    }
+  end
+
+  -- turn this on if you want yanking with 'y' to go to the clipboard as well
+  -- vim.opt.clipboard = 'unnamedplus'
 end)
 
 -- Enable break indent
