@@ -7,5 +7,5 @@ return {
   },
 
   --import AI plugins like avant, and codeium
-  { import = 'kmaune.plugins.ai_tools' },
+  -- { import = 'kmaune.plugins.ai_tools' },
 }
