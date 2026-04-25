@@ -6,7 +6,35 @@ return {
   dependencies = {
     'nvim-lua/plenary.nvim',
   },
+  keys = {
+    {
+      'gf',
+      function()
+        return require('obsidian').util.gf_passthrough()
+      end,
+      noremap = false,
+      expr = true,
+      buffer = true,
+    },
+    {
+      '<leader>ch',
+      function()
+        return require('obsidian').util.toggle_checkbox()
+      end,
+      buffer = true,
+    },
+    {
+      '<cr>',
+      function()
+        return require('obsidian').util.smart_action()
+      end,
+      buffer = true,
+      expr = true,
+    },
+  },
   opts = {
+    legacy_commands = false,
+
     workspaces = {
       {
         name = 'personal',
@@ -19,33 +47,10 @@ return {
       date_format = '%Y-%m-%d',
     },
 
-    -- Simple blink completion - let obsidian handle the integration
     completion = {
       nvim_cmp = false,
       blink = true,
       min_chars = 2,
-    },
-
-    -- Keymaps for following links and other obsidian actions
-    mappings = {
-      ['gf'] = {
-        action = function()
-          return require('obsidian').util.gf_passthrough()
-        end,
-        opts = { noremap = false, expr = true, buffer = true },
-      },
-      ['<leader>ch'] = {
-        action = function()
-          return require('obsidian').util.toggle_checkbox()
-        end,
-        opts = { buffer = true },
-      },
-      ['<cr>'] = {
-        action = function()
-          return require('obsidian').util.smart_action()
-        end,
-        opts = { buffer = true, expr = true },
-      },
     },
   },
 }
