@@ -9,25 +9,18 @@ return {
   opts = {
     legacy_commands = false,
 
-    mappings = {
-      ['gf'] = {
-        action = function()
+    callbacks = {
+      enter_note = function(_note)
+        vim.keymap.set('n', 'gf', function()
           return require('obsidian').util.gf_passthrough()
-        end,
-        opts = { noremap = false, expr = true, buffer = true },
-      },
-      ['<leader>ch'] = {
-        action = function()
+        end, { noremap = false, expr = true, buffer = true })
+        vim.keymap.set('n', '<leader>ch', function()
           return require('obsidian').util.toggle_checkbox()
-        end,
-        opts = { buffer = true },
-      },
-      ['<cr>'] = {
-        action = function()
+        end, { buffer = true })
+        vim.keymap.set('n', '<cr>', function()
           return require('obsidian').util.smart_action()
-        end,
-        opts = { buffer = true, expr = true },
-      },
+        end, { buffer = true, expr = true })
+      end,
     },
 
     workspaces = {
