@@ -23,12 +23,13 @@ return {
       end,
     },
 
-    workspaces = {
-      {
-        name = 'personal',
-        path = '/Users/kmaune/Library/Mobile Documents/iCloud~md~obsidian/Documents/ObsidianVault-Main',
-      },
-    },
+    workspaces = (function()
+      local vault = vim.fn.expand('~/Library/Mobile Documents/iCloud~md~obsidian/Documents/ObsidianVault-Main')
+      if vim.fn.isdirectory(vault) == 1 then
+        return { { name = 'personal', path = vault } }
+      end
+      return {}
+    end)(),
 
     daily_notes = {
       folder = '00 - Daily/Daily Notes',
