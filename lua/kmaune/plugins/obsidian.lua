@@ -3,6 +3,9 @@ return {
   version = '*',
   lazy = true,
   ft = 'markdown',
+  cond = function()
+    return vim.fn.isdirectory(vim.fn.expand('~/Library/Mobile Documents/iCloud~md~obsidian/Documents/ObsidianVault-Main')) == 1
+  end,
   dependencies = {
     'nvim-lua/plenary.nvim',
   },
